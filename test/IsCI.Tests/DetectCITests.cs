@@ -11,11 +11,14 @@ namespace IsCI.Tests
     public class DetectCITests : IDisposable
     {
         private Action _unset;
-        private readonly ITestOutputHelper _output;
 
-        public DetectCITests(ITestOutputHelper output)
+        public DetectCITests()
         {
-            _output = output;
+            // Set AppVeyor and Travis environments to null before each test since these are the two CIs used to drive tests
+            Environment.SetEnvironmentVariable("APPVEYOR", null);
+            Environment.SetEnvironmentVariable("APPVEYOR_PULL_REQUEST_NUMBER", null);
+            Environment.SetEnvironmentVariable("TRAVIS", null);
+            Environment.SetEnvironmentVariable("TRAVIS_PULL_REQUEST", null);
         }
 
         [Fact]

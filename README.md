@@ -2,7 +2,9 @@
 
 Detect if builds or tests are running in a CI environment.
 
-[![Build Status](https://travis-ci.org/saintedlama/isci.svg?branch=master)](https://travis-ci.org/saintedlama/isci)
+[![Travis Build Status](https://travis-ci.org/saintedlama/isci.svg?branch=master)](https://travis-ci.org/saintedlama/isci)
+[![AppVeyor Build status](https://ci.appveyor.com/api/projects/status/yqd2ei5hp813wwcs?svg=true)](https://ci.appveyor.com/project/saintedlama/isci)
+
 [![Coverage Status](https://coveralls.io/repos/github/saintedlama/isci/badge.svg?branch=master)](https://coveralls.io/github/saintedlama/isci?branch=master)
 
 Inspired by the awesome node.js module ['ci-info'](https://github.com/watson/ci-info)

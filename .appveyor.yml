@@ -1,0 +1,13 @@
+image: Visual Studio 2017
+branches:
+  only:
+  - master
+before_build:
+  - cmd: dotnet --version
+  - cmd: dotnet tool install coveralls.net --global
+build_script:
+  - cmd: dotnet build
+test_script:
+  - cmd: dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=opencover test/IsCI.Tests/IsCI.Tests.csproj 
+  - cmd: csmacnz.Coveralls --opencover -i test/IsCI.Tests/coverage.opencover.xml --repoToken %COVERALLS_REPO_TOKEN% --commitId %APPVEYOR_REPO_COMMIT% --commitBranch %APPVEYOR_REPO_BRANCH% --commitAuthor %APPVEYOR_REPO_COMMIT_AUTHOR% --commitEmail %APPVEYOR_REPO_COMMIT_AUTHOR_EMAIL% --commitMessage %APPVEYOR_REPO_COMMIT_MESSAGE% --jobId %APPVEYOR_JOB_ID%
+deploy: off

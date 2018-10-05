@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <Authors>Christoph Walcher</Authors>
+    <Authors>saintedlama</Authors>
     <PackageTags>CI;appveyor;travis</PackageTags>
     <Description>Detect if builds or tests are running in a CI environment</Description>
     <PackageProjectUrl>https://github.com/saintedlama/isci</PackageProjectUrl>
